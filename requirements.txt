@@ -1,0 +1,8 @@
+django>=6.0,<6.1
+gunicorn>=25,<26
+dj-database-url>=3,<4
+whitenoise>=6,<7
+django-heroku
+
+# Uncomment to use a Postgres database.
+#psycopg[binary]

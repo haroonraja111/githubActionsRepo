@@ -1,0 +1,33 @@
+# .flake8
+
+[flake8]
+# Maximum line length (PEP8 recommends 79, but Django projects often use 120)
+max-line-length = 120
+
+# Exclude common Django folders and migrations
+exclude =
+    .git,
+    __pycache__,
+    migrations,
+    settings.py,
+    manage.py,
+    env,
+    venv
+
+# Enable useful plugins (if installed)
+# flake8-django helps with Django-specific checks
+# flake8-import-order enforces import order
+# flake8-docstrings checks docstring conventions
+select = C,E,F,W,B,DJ
+
+# Ignore specific rules (customize as needed)
+# E203 and W503 conflict with Black formatter
+ignore =
+    E203,
+    W503
+
+# Show source for errors
+show-source = true
+
+# Count total errors
+count = true
