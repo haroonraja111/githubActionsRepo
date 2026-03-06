@@ -23,7 +23,9 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
       run: |
-        python -m pip install --upgrade pip
+        # Temporarily pin pip to 23.3.1 to avoid incompatibility with Python <3.12,
+        # since pip 24+ and Django 6+ require Python >=3.12
+        python -m pip install --upgrade 'pip<24.0'
         pip install -r requirements.txt
     - name: Run Tests
       run: |
